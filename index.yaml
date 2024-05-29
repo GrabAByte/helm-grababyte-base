@@ -1,0 +1,84 @@
+apiVersion: v1
+entries:
+  alpine-base:
+  - annotations:
+      artifacthub.io/images: |
+        - name: alpine-base
+          image: alpine-base:0.11.0
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/GrabAByte/helm-grababyte-base/tree/main/charts/alpine-base
+    apiVersion: v2
+    appVersion: 0.11.0
+    created: "2024-05-29T12:27:22.959628262Z"
+    description: alpine-base is lightweight image with additional essential dependencies
+      for troubleshooting
+    digest: 1bf29b22bf7baab72578f6dcd22d069751736ef16cf93f90b9493752932a6dfd
+    keywords:
+    - base
+    kubeVersion: '>= 1.24.0-0'
+    maintainers:
+    - email: twr.devops@gmail.com
+      name: grababyte
+    name: alpine-base
+    sources:
+    - https://github.com/GrabAByte/helm-grababyte-base
+    type: application
+    urls:
+    - https://github.com/GrabAByte/helm-grababyte-base/releases/download/alpine-base-0.0.1/alpine-base-0.0.1.tgz
+    version: 0.0.1
+  centos-base:
+  - annotations:
+      artifacthub.io/images: |
+        - name: centos-base
+          image: centos-base:0.4.1
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/GrabAByte/helm-grababyte-base/tree/main/charts/centos-base
+    apiVersion: v2
+    appVersion: 0.4.1
+    created: "2024-05-29T12:27:23.073643032Z"
+    description: centos-base is CentOS 8.4 image with additional essential dependencies
+      for troubleshooting
+    digest: 57d133ca55547c89dad9d42316032d6e804b078402f929d11feed2321b889352
+    keywords:
+    - base
+    kubeVersion: '>= 1.24.0-0'
+    maintainers:
+    - email: twr.devops@gmail.com
+      name: grababyte
+    name: centos-base
+    sources:
+    - https://github.com/GrabAByte/helm-grababyte-base
+    type: application
+    urls:
+    - https://github.com/GrabAByte/helm-grababyte-base/releases/download/centos-base-0.0.1/centos-base-0.0.1.tgz
+    version: 0.0.1
+  ubuntu-base:
+  - annotations:
+      artifacthub.io/images: |
+        - name: ubuntu-base
+          image: ubuntu-base:0.7.1
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/GrabAByte/helm-grababyte-base/tree/main/charts/ubuntu-base
+    apiVersion: v2
+    appVersion: 0.7.1
+    created: "2024-05-29T12:27:23.201392368Z"
+    description: ubuntu-base is an Ubuntu 24.04 image with additional essential dependencies
+      for troubleshooting
+    digest: 69906a4712290456117d884454d47da07e271fef00e07c6d4059c399a132030c
+    keywords:
+    - base
+    kubeVersion: '>= 1.24.0-0'
+    maintainers:
+    - email: twr.devops@gmail.com
+      name: grababyte
+    name: ubuntu-base
+    sources:
+    - https://github.com/GrabAByte/helm-grababyte-base
+    type: application
+    urls:
+    - https://github.com/GrabAByte/helm-grababyte-base/releases/download/ubuntu-base-0.0.1/ubuntu-base-0.0.1.tgz
+    version: 0.0.1
+generated: "2024-05-29T12:27:23.201404651Z"
