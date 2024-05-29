@@ -12,13 +12,13 @@ jobs:
       matrix:
         chart: [alpine-base,ubuntu-base,centos-base]
     uses: GrabAByte/github-devops-workflows/.github/workflows/helmLint.yml@feat/helm
-      with:
-        chartPath: "charts/${{ matrix.chart }}"
+    with:
+      chartPath: "charts/${{ matrix.chart }}"
   template_matrix:
     strategy:
       matrix:
         chart: [alpine-base,ubuntu-base,centos-base]
     uses: GrabAByte/github-devops-workflows/.github/workflows/helmTemplate.yml@feat/helm
-      with:
-        chartPath: "charts/${{ matrix.chart }}"
-        releaseName: ${{ matrix.chart }}
+    with:
+      chartPath: "charts/${{ matrix.chart }}"
+      releaseName: ${{ matrix.chart }}
