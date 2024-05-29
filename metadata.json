@@ -1,0 +1,13 @@
+{
+  "charts": {
+    "alpine-base": {
+      "version": "0.0.1"
+    },
+    "ubuntu-base": {
+      "version": "0.0.1"
+    },
+    "centos-base": {
+      "version": "0.0.1"
+    }
+  }
+}
