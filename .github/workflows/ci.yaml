@@ -11,19 +11,19 @@ jobs:
     strategy:
       matrix:
         chart: [alpine-base,ubuntu-base,centos-base]
-    uses: GrabAByte/github-devops-workflows/.github/workflows/helmLint.yml@feat/helm
+    uses: GrabAByte/github-devops-workflows/.github/workflows/helmLint.yml@0.7.0
     with:
       chartPath: "charts/${{ matrix.chart }}"
   template:
     strategy:
       matrix:
         chart: [alpine-base,ubuntu-base,centos-base]
-    uses: GrabAByte/github-devops-workflows/.github/workflows/helmTemplate.yml@feat/helm
+    uses: GrabAByte/github-devops-workflows/.github/workflows/helmTemplate.yml@0.7.0
     with:
       chartPath: "charts/${{ matrix.chart }}"
       releaseName: "${{ matrix.chart }}"
       valuesPath: "charts/${{ matrix.chart }}/values.yaml"
     needs: lint
   release:
-    uses: GrabAByte/github-devops-workflows/.github/workflows/helmRelease.yml@feat/helm
+    uses: GrabAByte/github-devops-workflows/.github/workflows/helmRelease.yml@0.7.0
     needs: template
