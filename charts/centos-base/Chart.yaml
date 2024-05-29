@@ -1,1 +1,22 @@
 ---
+apiVersion: v2
+name: centos-base
+description: centos-base is CentOS 8.4 image with additional essential dependencies for troubleshooting
+type: application
+version: 0.4.1
+appVersion: 0.0.1
+keywords:
+  - base
+sources:
+  - https://github.com/GrabAByte/helm-grababyte-base
+kubeVersion: '>= 1.24.0-0'
+maintainers:
+  - name: grababyte
+    email: twr.devops@gmail.com
+annotations:
+  artifacthub.io/links: |
+    - name: Chart Source
+      url: https://github.com/GrabAByte/helm-grababyte-base/tree/main/charts/centos-base
+  artifacthub.io/images: |
+    - name: centos-base
+      image: centos-base:0.4.1
