@@ -3,8 +3,8 @@ apiVersion: v2
 name: alpine-base
 description: alpine-base is lightweight image with additional essential dependencies for troubleshooting
 type: application
-version: 0.11.0
-appVersion: 0.0.1
+version: 0.0.1
+appVersion: 0.11.0
 keywords:
   - base
 sources:

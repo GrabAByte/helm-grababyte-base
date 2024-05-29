@@ -3,8 +3,8 @@ apiVersion: v2
 name: centos-base
 description: centos-base is CentOS 8.4 image with additional essential dependencies for troubleshooting
 type: application
-version: 0.4.1
-appVersion: 0.0.1
+version: 0.0.1
+appVersion: 0.4.1
 keywords:
   - base
 sources:
