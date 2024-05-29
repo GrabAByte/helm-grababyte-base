@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "alpine.base.fullname" . }}
+  name: {{ template "alpine.base.name" . }}
   labels:
     app: {{ template "alpine.base.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-    app.kubernetes.io/name: {{ template "alpine.base.name" . }}-{{ template "alpine.base.fullname" . }}
+    app.kubernetes.io/name: {{ template "alpine.base.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     app.kubernetes.io/part-of: alpine-base
-    app.kubernetes.io/component: {{ template "alpine.base.fullname" . }}
+    app.kubernetes.io/component: {{ template "alpine.base.name" . }}
     app.kubernetes.io/version: {{ tpl .Values.image.tag . | quote }}
 spec:
   replicas: {{ .Values.replicaCount }}
@@ -52,7 +52,6 @@ spec:
             - name: http
               containerPort: {{ .Values.service.internalPort }}
               protocol: TCP
-            {{- end }}
           resources:
 {{ toYaml (default .Values.resources .Values.resource) | indent 12 }}
           env:

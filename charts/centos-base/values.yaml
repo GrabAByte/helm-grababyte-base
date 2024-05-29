@@ -1,1 +1,129 @@
 ---
+deploymentType: "Deployment"
+replicaCount: 1
+revisionHistoryLimit: 10
+deploymentStrategy: {}
+
+image:
+  repository: centos-base
+  tag: 0.4.1
+  pullPolicy: IfNotPresent
+
+securityContext:
+  fsGroup: 0
+
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  runAsNonRoot: true
+  runAsUser: 1000
+  runAsGroup: 0
+  seccompProfile:
+    type: RuntimeDefault
+  capabilities:
+    drop: ["ALL"]
+service:
+  type: ClusterIP
+  externalPort: 9000
+  internalPort: 9000
+  labels:
+  annotations: {}
+
+affinity: {}
+
+tolerations: []
+
+nodeSelector: {}
+
+readinessProbe:
+  initialDelaySeconds: 60
+  periodSeconds: 30
+  failureThreshold: 6
+  timeoutSeconds: 1
+
+livenessProbe:
+  initialDelaySeconds: 60
+  periodSeconds: 30
+  failureThreshold: 6
+  timeoutSeconds: 1
+
+startupProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  failureThreshold: 24
+  timeoutSeconds: 1
+
+initContainers:
+  securityContext:
+    allowPrivilegeEscalation: false
+    runAsNonRoot: true
+    runAsUser: 1000
+    runAsGroup: 0
+    seccompProfile:
+      type: RuntimeDefault
+    capabilities:
+      drop: ["ALL"]
+  resources: {}
+
+extraInitContainers: {}
+
+extraContainers: []
+
+initSysctl:
+  enabled: true
+  vmMaxMapCount: 524288
+  fsFileMax: 131072
+  nofile: 131072
+  nproc: 8192
+  # image: busybox:1.36
+  securityContext:
+    # Compatible with podSecurity standard privileged
+    privileged: true
+    # if run without root permissions, error "sysctl: permission denied on key xxx, ignoring"
+    runAsUser: 0
+  # resources: {}
+
+annotations: {}
+
+resources:
+  limits:
+    cpu: 800m
+    memory: 6144M
+    ephemeral-storage: 512000M
+  requests:
+    cpu: 400m
+    memory: 2048M
+    ephemeral-storage: 1536M
+
+persistence:
+  enabled: false
+  ## Set annotations on pvc
+  annotations: {}
+
+  storageClass:
+  accessMode: ReadWriteOnce
+  size: 5Gi
+  uid: 1000
+  guid: 0
+
+  volumes: []
+  mounts: []
+
+emptyDir: {}
+  # Example of resouces that might be used:
+  # medium: Memory
+  # sizeLimit: 16Mi
+
+podLabels: {}
+
+serviceAccount:
+  create: false
+  # name:
+  # automountToken: false # default
+  ## Annotations for the Service Account
+  annotations: {}
+
+extraConfig:
+  secrets: []
+  configmaps: []
+
+terminationGracePeriodSeconds: 60
