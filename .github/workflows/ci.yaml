@@ -11,13 +11,6 @@ jobs:
     strategy:
       matrix:
         chart: [alpine-base,ubuntu-base,centos-base]
-    get-version:
-      uses: GrabAByte/github-devops-workflows/.github/workflows/getVersion.yml@0.6.4
-      with:
-        metadataFile: Chart.yaml
-        metadataPath: "charts/${{ matrix.chart }}"
-    helm-lint:
-      uses: GrabAByte/github-devops-workflows/.github/workflows/helmLint.yml@feat/helm
-      with:
-        chartPath: "charts/${{ matrix.chart }}"
-      needs: get-version
+    uses: GrabAByte/github-devops-workflows/.github/workflows/helmLint.yml@feat/helm
+    with:
+      chartPath: "charts/${{ matrix.chart }}"
