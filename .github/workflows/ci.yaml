@@ -14,3 +14,6 @@ jobs:
     uses: GrabAByte/github-devops-workflows/.github/workflows/helmLint.yml@feat/helm
     with:
       chartPath: "charts/${{ matrix.chart }}"
+    uses: GrabAByte/github-devops-workflows/.github/workflows/helmLint.yml@feat/helm
+    with:
+      chartPath: "charts/${{ matrix.chart }}"
