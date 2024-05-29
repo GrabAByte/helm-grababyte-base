@@ -22,3 +22,4 @@ jobs:
     with:
       chartPath: "charts/${{ matrix.chart }}"
       releaseName: "${{ matrix.chart }}"
+      valuesPath: "charts/${{ matrix.chart }}/values.yaml"
