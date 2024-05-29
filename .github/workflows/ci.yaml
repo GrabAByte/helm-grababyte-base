@@ -7,18 +7,18 @@ name: CI
       - main
 
 jobs:
-  lint_matrix:
+  lint:
     strategy:
       matrix:
         chart: [alpine-base,ubuntu-base,centos-base]
     uses: GrabAByte/github-devops-workflows/.github/workflows/helmLint.yml@feat/helm
     with:
       chartPath: "charts/${{ matrix.chart }}"
-  template_matrix:
+  template:
     strategy:
       matrix:
         chart: [alpine-base,ubuntu-base,centos-base]
     uses: GrabAByte/github-devops-workflows/.github/workflows/helmTemplate.yml@feat/helm
     with:
       chartPath: "charts/${{ matrix.chart }}"
-      releaseName: ${{ matrix.chart }}
+      releaseName: "${{ matrix.chart }}"
