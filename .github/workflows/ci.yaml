@@ -25,8 +25,5 @@ jobs:
       valuesPath: "charts/${{ matrix.chart }}/values.yaml"
     needs: lint
   release:
-    strategy:
-      matrix:
-        chart: [alpine-base,ubuntu-base,centos-base]
     uses: GrabAByte/github-devops-workflows/.github/workflows/helmRelease.yml@feat/helm
     needs: template
