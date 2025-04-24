@@ -3,8 +3,8 @@ apiVersion: v2
 name: alpine-base
 description: alpine-base is lightweight image with additional essential dependencies for troubleshooting
 type: application
-version: 0.0.1
-appVersion: 0.11.0
+version: 0.1.0
+appVersion: 0.12.0
 keywords:
   - base
 sources:
@@ -19,4 +19,4 @@ annotations:
       url: https://github.com/GrabAByte/helm-grababyte-base/tree/main/charts/alpine-base
   artifacthub.io/images: |
     - name: alpine-base
-      image: alpine-base:0.11.0
+      image: alpine-base:0.12.0
