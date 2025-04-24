@@ -3,8 +3,8 @@ apiVersion: v2
 name: ubuntu-base
 description: ubuntu-base is an Ubuntu 24.04 image with additional essential dependencies for troubleshooting
 type: application
-version: 0.0.1
-appVersion: 0.7.1
+version: 0.1.0
+appVersion: 0.8.0
 keywords:
   - base
 sources:
@@ -19,4 +19,4 @@ annotations:
       url: https://github.com/GrabAByte/helm-grababyte-base/tree/main/charts/ubuntu-base
   artifacthub.io/images: |
     - name: ubuntu-base
-      image: ubuntu-base:0.7.1
+      image: ubuntu-base:0.8.0
